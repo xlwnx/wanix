@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanix - Streaming Movies & TV Shows</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@300;500;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+
+<body>
+    <div id="splash-screen" class="splash-screen">
+        <h1 class="logo splash-logo" id="splashLogo">Wanix</h1>
+    </div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-left">
+            <i class="fas fa-bars mobile-menu-toggle" id="menuToggle"></i>
+            <h1 class="logo" onclick="app.router('home')">Wanix</h1>
+            <ul class="nav-links" id="navLinks">
+                <li id="nav-home" onclick="app.router('home')">Home</li>
+                <li id="nav-movies" onclick="app.router('movies')">Movies</li>
+                <li id="nav-tvshows" onclick="app.router('tvshows')">TV Shows</li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <div class="search-group" id="searchGroup">
+                <div class="search-bar" id="searchBar">
+                    <i class="fas fa-search search-trigger" onclick="app.toggleSearch()"></i>
+                    <input type="text" id="searchInput" placeholder="Search titles, genres, years..." autocomplete="off">
+                    <i class="fas fa-times search-close" onclick="app.toggleSearch()"></i>
+                </div>
+                <div id="search-results" class="search-results-panel hidden"></div>
+            </div>
+        </div>
+    </nav>
+
+    <main id="app-container">
+        <!-- Content will be injected here -->
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Wanix. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Main Entry Script -->
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

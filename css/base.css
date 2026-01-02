@@ -1,0 +1,72 @@
+:root {
+    --primary: #3b82f6;
+    --primary-dark: #2563eb;
+    --primary-glow: rgba(59, 130, 246, 0.5);
+    --bg: #020617;
+    --nav-bg: rgba(2, 6, 23, 0.8);
+    --card-bg: #0f172a;
+    --card-hover: #1e293b;
+    --text: #f8fafc;
+    --text-muted: #94a3b8;
+    --rating-green: #22c55e;
+    --rating-yellow: #eab308;
+    --rating-red: #ef4444;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* PAGE TRANSITIONS */
+#app-container {
+    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page-exit {
+    opacity: 0;
+    transform: scale(0.98) translateY(10px);
+}
+
+.page-enter {
+    animation: pageFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes pageFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(1.02) translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Row & Item Animations */
+.row {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hidden {
+    display: none !important;
+}
